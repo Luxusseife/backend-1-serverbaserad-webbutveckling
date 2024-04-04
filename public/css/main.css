@@ -1,0 +1,192 @@
+/* Återställer default-värden. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body. */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #e9e9e9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header. */
+header {
+    background-color: #516e8e;
+    color: #ffffff;
+    width: 100%;
+    height: 125px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Style för flikar. */
+.tablink {
+    background-color: #46607b;
+    color: white;
+    height: 60px;
+    float: left;
+    border-top: 2px solid #3c526a;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 33.33%;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 2px #000000;
+}
+
+/* Hover-effekt för flikar. */
+.tablink:hover {
+    background-color: #3c526a;
+}
+
+/* Style för flik-innehåll. */
+.tabcontent {
+    padding: 100px 0 50px 0;
+    height: 100%;
+    width: 80%;
+}
+
+/* Visar aktiva flikens innehåll.*/
+.tabcontent:target {
+    background-color: #e9e9e9;
+    color: #3c526a;
+}
+
+/* Lägger till en klass för den aktiva fliken. */
+.tablink.active {
+    background-color: #e9e9e9;
+    color: #3c526a;
+    text-shadow: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Regler för paragraf i flik-innehållet. */
+.tabcontent p {
+    margin: 1rem 0 0 3rem;
+    max-width: 55ch;
+    line-height: 2;
+}
+
+/* Rubriker. */
+h1 {
+    margin: 3rem 0 0 3rem;
+    text-shadow: 1px 2px #000000;
+}
+
+h2 {
+    margin: 0 0 0 3rem;
+    font-weight: bold;
+    color: #3c526a;
+}
+
+/* Formulär på "Lägg till kurs"-sidan. */
+#coursesForm {
+    width: 100%;
+    background-color: #e9e9e9;
+    color: #3c526a;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 1rem 0 0 3rem;
+}
+
+/* Progression-rubrik. */
+#prog {
+    margin: 0;
+}
+
+/* Radio-knappar. */
+#A,
+#B,
+#C {
+    cursor: pointer;
+}
+
+/* Input-fält. */
+#courseCode,
+#courseName,
+#courseSyllabus {
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.4rem;
+}
+
+/* Spara-knapp. */
+#saveCourse  {
+    width: 5rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.65);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 2rem 0 0 0;
+    background-color: #78bc78;
+}
+
+/* Hover-effekt. */
+#saveCourse:hover {
+    background-color: #519051;
+}
+
+/* Rensa-knapp. */
+#resetForm {
+    width: 5rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.65);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 2rem 0 0 2rem;
+    background-color: #c66960;
+}
+
+/* Hover-effekt. */
+#resetForm:hover {
+    background-color: #a64343;
+}
+
+/* Footer. */
+footer {
+    margin-top: auto;
+    width: 100%;
+    height: 75px;
+    background-color: #516e8e;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    padding: 0.75rem 0 0 0;
+    border-top: 2px solid #3c526a;
+}
+
+/* Style för skärmstorlek större än 495px. */
+@media (min-width: 496px) {
+    .tablink {
+        padding: 17px 15px;
+    }
+
+    #courseCode,
+    #courseName,
+    #courseSyllabus {
+    width: 75%;
+    }
+} 
+
+/* Style för skärmstorlek större än 768px. */
+@media (min-width: 769px) {
+    #courseCode,
+    #courseName,
+    #courseSyllabus {
+    width: 40%;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitt CV | <%= title %></title>
+
+    <link rel="icon" href="/assets/favicon.ico" type="favicon">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Mitt CV</h1>
+    </header>
+
+    <main>
+        <a class="tablink" href="/">Mina kurser</a>
+        <a class="tablink active" href="/addcourse">Lägg till kurs</a>
+        <a class="tablink" href="/about">Om sidan</a>
+    
+        <div class="tabcontent">
+            <h2>Lägg till kurs</h2>
+            <form id="coursesForm">
+                <br>
+                <label for="courseName">Kursnamn:</label>
+                <br>
+                <input type="text" name="name" id="courseName" placeholder="Skriv kursnamn">
+                <br>
+                <br>
+                <label for="courseCode">Kurskod:</label>
+                <br>
+                <input type="text" name="code" id="courseCode" placeholder="Skriv kurskod">
+                <br>
+                <br>
+                <p id="prog">Progression:</p>
+                <input type="radio" id="A" name="progression" value="A">
+                <label for="A">A</label>
+                <br>
+                <input type="radio" id="B" name="progression" value="B">
+                <label for="B">B</label>
+                <br>
+                <input type="radio" id="C" name="progression" value="C">
+                <label for="C">C</label>
+                <br>
+                <br>
+                <label for="courseSyllabus">Kursplanens URL:</label>
+                <br>
+                <input type="text" name="syllabus" id="courseSyllabus" placeholder="Skriv URL">
+                <br>
+                <br>
+                <div class="button-container">
+                    <input type="button" id="saveCourse" value="Spara">
+                    <input type="reset" id="resetForm" value="Avbryt">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            Laborationsuppgift för kursen DT207G.
+            <br>
+            Copyright © 2024 <%= fullname %>
+        </p>
+    </footer>
+    
+    <script src="/js/main.js" type="module"></script>
+</body>
+</html>
