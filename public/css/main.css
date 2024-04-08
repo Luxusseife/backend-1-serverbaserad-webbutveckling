@@ -33,7 +33,7 @@ header {
     border-top: 2px solid #3c526a;
     outline: none;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 5px 15px;
     font-size: 18px;
     width: 33.33%;
     text-decoration: none;
@@ -75,6 +75,26 @@ header {
     line-height: 2;
 }
 
+.courselist {
+    width: 90%;
+    margin: 2rem 0 0 3rem;
+}
+
+/* Regler för listan i flik-innehållet på index. */
+.tabcontent ul {
+    list-style-type: none;
+    line-height: 1.6;
+}
+
+.course-container {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border: 5px double #3c526a;
+    background-color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    color: #3c526a;
+}
+
 /* Rubriker. */
 h1 {
     margin: 3rem 0 0 3rem;
@@ -83,6 +103,12 @@ h1 {
 
 h2 {
     margin: 0 0 0 3rem;
+    font-weight: bold;
+    color: #3c526a;
+}
+
+h3 {
+    margin: 0 0 0.5rem 0;
     font-weight: bold;
     color: #3c526a;
 }
@@ -116,6 +142,8 @@ h2 {
     width: 100%;
     height: 2rem;
     margin-top: 0.4rem;
+    border: 1px solid #3c526a;
+    padding-left: 0.5rem;
 }
 
 /* Spara-knapp. */
@@ -169,16 +197,23 @@ footer {
     border-top: 2px solid #3c526a;
 }
 
-/* Style för skärmstorlek större än 495px. */
-@media (min-width: 496px) {
+/* Style för skärmstorlek större än 392px. */
+@media (min-width: 393px) {
     .tablink {
         padding: 17px 15px;
     }
+} 
 
+/* Style för skärmstorlek större än 495px. */
+@media (min-width: 496px) {
     #courseCode,
     #courseName,
     #courseSyllabus {
     width: 75%;
+    }
+
+    .courselist {
+        max-width: 55ch;
     }
 } 
 

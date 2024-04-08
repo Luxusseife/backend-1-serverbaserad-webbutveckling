@@ -28,8 +28,8 @@ client.query (`
         courseid SERIAL PRIMARY KEY,
         coursename TEXT NOT NULL,
         coursecode TEXT NOT NULL,
-        syllabus TEXT NOT NULL,
         progression TEXT NOT NULL,
+        syllabus TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 `);

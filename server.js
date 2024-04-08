@@ -42,10 +42,19 @@ app.use(express.urlencoded( { extended: true }));
 // Routing.
 // Skickar anrop till Index-sidan.
 app.get("/", (req, res) => { 
-    res.render("index", {
-        fullname: "Jenny Lind",
-        title: "Mina kurser", 
-    });
+
+    // Läs in kurser från databasen.
+    client.query("SELECT * FROM courses", (error, result) => {
+        if(error) {
+            console.log("Fel vid databas-fråga!");
+        } else {
+            res.render("index", {
+                fullname: "Jenny Lind",
+                title: "Mina kurser", 
+                courses: result.rows
+            });
+        }
+    });   
 });
 
 // Skickar anrop till kurs-sidan.
