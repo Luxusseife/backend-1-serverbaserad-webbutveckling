@@ -70,7 +70,7 @@ header {
 
 /* Regler för paragraf i flik-innehållet. */
 .tabcontent p {
-    margin: 1rem 0 0 3rem;
+    margin: 2rem 0 0 3rem;
     max-width: 55ch;
     line-height: 2;
 }

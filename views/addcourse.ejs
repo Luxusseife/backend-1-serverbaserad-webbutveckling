@@ -16,24 +16,24 @@
     <main>
         <a class="tablink" href="/">Mina kurser</a>
         <a class="tablink active" href="/addcourse">Lägg till kurs</a>
-        <a class="tablink" href="/about">Om sidan</a>
-    
+        <a class="tablink" href="/about">Om appen</a>
+        
         <div class="tabcontent">
             <h2>Lägg till kurs</h2>
-            <form id="coursesForm">
+            <form id="coursesForm" method="post" action="/">
                 <br>
                 <label for="courseName">Kursnamn:</label>
                 <br>
-                <input type="text" name="name" id="courseName" placeholder="Skriv kursnamn">
+                <input type="text" name="name" id="courseName" placeholder="Skriv kursnamn" required>
                 <br>
                 <br>
                 <label for="courseCode">Kurskod:</label>
                 <br>
-                <input type="text" name="code" id="courseCode" placeholder="Skriv kurskod">
+                <input type="text" name="code" id="courseCode" placeholder="Skriv kurskod" required>
                 <br>
                 <br>
                 <p id="prog">Progression:</p>
-                <input type="radio" id="A" name="progression" value="A">
+                <input type="radio" id="A" name="progression" value="A" required>
                 <label for="A">A</label>
                 <br>
                 <input type="radio" id="B" name="progression" value="B">
@@ -45,11 +45,11 @@
                 <br>
                 <label for="courseSyllabus">Kursplanens URL:</label>
                 <br>
-                <input type="text" name="syllabus" id="courseSyllabus" placeholder="Skriv URL">
+                <input type="text" name="syllabus" id="courseSyllabus" placeholder="Skriv URL" required>
                 <br>
                 <br>
                 <div class="button-container">
-                    <input type="button" id="saveCourse" value="Spara">
+                    <input type="submit" id="saveCourse" value="Spara">
                     <input type="reset" id="resetForm" value="Avbryt">
                 </div>
             </form>

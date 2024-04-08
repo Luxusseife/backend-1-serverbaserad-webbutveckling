@@ -18,6 +18,9 @@ Den här README-filen har skapats för att beskriva momentets syfte och lista pr
 5. Skapa innehåll för respektive view.
 6. Skapa dynamiskt innehåll för vissa delar och detaljer i appen, exempelvis titel.
 7. Publicera på Github och gör en första commit med design och innehåll.
-8. Gå vidare till funktionalitet.
+8. Gör ett ER-diagram som visar hur tabellen courses ska se ut.
+9. Förbered miljön för anslutning till databasen PostgreSQL, anslut och skapa tabellen courses.
+10. Möjjliggör inläsning och hantering av formulärdata och lagra från formuläret i databasen.
+11. Gå vidare till att läsa ut data från databasen och ut till skärmen...
 
 #### _Skapad av Jenny Lind, jeli2308_.
