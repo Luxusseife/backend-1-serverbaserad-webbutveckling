@@ -79,6 +79,15 @@ app.post("/", async (req, res) => {
     res.redirect("/");
 });
 
+// Raderar kurs.
+app.post("/delete", async (req, res) => {
+    const deletecourse = req.body.courseId;
+
+    await client.query("DELETE FROM courses WHERE courseId = $1", [deletecourse]);
+    
+    res.redirect("/");
+});
+
 // Skickar anrop till Om-sidan.
 app.get("/about", (req, res) => { 
     res.render("about", {

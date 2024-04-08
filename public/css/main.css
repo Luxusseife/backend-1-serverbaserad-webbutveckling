@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+/* GENERELLT FÖR ALLA SIDOR. */
+
 /* Body. */
 body {
     min-height: 100vh;
@@ -34,7 +36,6 @@ header {
     outline: none;
     cursor: pointer;
     padding: 5px 15px;
-    font-size: 18px;
     width: 33.33%;
     text-decoration: none;
     text-align: center;
@@ -68,33 +69,6 @@ header {
     text-decoration: underline;
 }
 
-/* Regler för paragraf i flik-innehållet. */
-.tabcontent p {
-    margin: 2rem 0 0 3rem;
-    max-width: 55ch;
-    line-height: 2;
-}
-
-.courselist {
-    width: 90%;
-    margin: 2rem 0 0 3rem;
-}
-
-/* Regler för listan i flik-innehållet på index. */
-.tabcontent ul {
-    list-style-type: none;
-    line-height: 1.6;
-}
-
-.course-container {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border: 5px double #3c526a;
-    background-color: #ffffff;
-    margin: 0 0 1.5rem 0;
-    color: #3c526a;
-}
-
 /* Rubriker. */
 h1 {
     margin: 3rem 0 0 3rem;
@@ -108,9 +82,59 @@ h2 {
 }
 
 h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     font-weight: bold;
     color: #3c526a;
+}
+
+/* SID-SPECIFIKA REGLER. */
+
+/* Paragraf i flik-innehållet på about-sidan. */
+.tabcontent p {
+    margin: 2rem 0 0 3rem;
+    max-width: 55ch;
+    line-height: 2;
+}
+
+/* Listan på index-sidan. */
+.courselist-container {
+    width: 90%;
+    margin: 2rem 0 0 3rem;
+}
+
+/* Listan i flik-innehållet på index-sidan. */
+.courselist-container ul {
+    list-style-type: none;
+    line-height: 1.6;
+}
+
+/* Container för tillagd kurs i listan på index-sidan. */
+.course-container {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border: 5px double #3c526a;
+    background-color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    color: #3c526a;
+}
+
+/* Radera kurs-knapp. */
+.deleteCourse  {
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.65);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    background-color: #c66960;
+}
+
+/* Hover-effekt. */
+.deleteCourse:hover {
+    background-color: #a64343;
 }
 
 /* Formulär på "Lägg till kurs"-sidan. */
@@ -144,17 +168,19 @@ h3 {
     margin-top: 0.4rem;
     border: 1px solid #3c526a;
     padding-left: 0.5rem;
+    font-size: 14px;
+    color: #3c526a;
 }
 
 /* Spara-knapp. */
 #saveCourse  {
     width: 5rem;
-    height: 2.5rem;
+    height: 2rem;
     border: 1px solid black;
     box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.65);
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     margin: 2rem 0 0 0;
     background-color: #78bc78;
@@ -168,12 +194,12 @@ h3 {
 /* Rensa-knapp. */
 #resetForm {
     width: 5rem;
-    height: 2.5rem;
+    height: 2rem;
     border: 1px solid black;
     box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.65);
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     margin: 2rem 0 0 2rem;
     background-color: #c66960;
@@ -212,7 +238,7 @@ footer {
     width: 75%;
     }
 
-    .courselist {
+    .courselist-container {
         max-width: 55ch;
     }
 } 
@@ -223,5 +249,18 @@ footer {
     #courseName,
     #courseSyllabus {
     width: 40%;
+    }
+}
+
+/* Style för skärmstorlek större än 1920px. */
+@media (min-width: 1921px) {
+    body {
+        font-size: larger;
+    }
+
+
+
+    a {
+        font-size: larger;
     }
 }

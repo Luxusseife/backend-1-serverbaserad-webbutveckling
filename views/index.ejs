@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitt CV | <%= title %></title>
 
-    <link rel="icon" href="/assets/favicon.ico" type="favicon">
+    <link rel="icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <a href="/addcourse">Lägg till ny kurs</a>
             </p>
 
-            <div class="courselist">
+            <div class="courselist-container">
                 <ul>
                     <% courses.forEach(course => { %>
                         <li class="course-container">
@@ -34,10 +34,13 @@
                                 <li><strong>Progression:</strong> <%= course.progression %></li>
                                 <li><strong>Kursplan:</strong> <a target="_blank" href="<%= course.syllabus %>">Länk!</a></li>
                             </ul>
-                        </li>
+                            <form class="button-container" method="post" action="/delete">
+                                <input type="hidden" name="courseId" value="<%= course.courseid %>">
+                                <input type="submit" value="Radera kursen" class="deleteCourse">
+                            </form>
+                        </li>  
                     <% }); %>
                 </ul>
-            </div>
             </div>
         </div>
     </main>
