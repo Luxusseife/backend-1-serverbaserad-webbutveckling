@@ -20,7 +20,7 @@ Den här README-filen har skapats för att beskriva momentets syfte och lista pr
 7. Publicera på Github och gör en första commit med design och innehåll.
 8. Gör ett ER-diagram som visar hur tabellen courses ska se ut.
 9. Förbered miljön för anslutning till databasen PostgreSQL, anslut och skapa tabellen courses.
-10. Möjliggör inläsning och hantering av formulärdata och lagra från formuläret i databasen.
+10. Möjliggör inläsning, hantering och validering av formulärdata och lagra från formuläret i databasen.
 11. Möjliggör utskrift av lagrade kurser på index-sidan.
 12. Möjliggör radering av enstaka kurser.
 13. Publicera applikationen via Github och Render.

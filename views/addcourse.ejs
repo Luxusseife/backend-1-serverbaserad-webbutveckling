@@ -20,34 +20,46 @@
         
         <div class="tabcontent">
             <h2>Lägg till kurs</h2>
+
             <form id="coursesForm" method="post" action="/">
                 <br>
                 <label for="courseName">Kursnamn:</label>
                 <br>
-                <input type="text" name="name" id="courseName" placeholder="Skriv kursnamn" required>
+                <input type="text" name="name" id="courseName" placeholder="Skriv kursnamn" value="<%= coursename %>">
                 <br>
                 <br>
                 <label for="courseCode">Kurskod:</label>
                 <br>
-                <input type="text" name="code" id="courseCode" placeholder="Skriv kurskod" required>
+                <input type="text" name="code" id="courseCode" placeholder="Skriv kurskod" value="<%= coursecode %>">
                 <br>
                 <br>
                 <p id="prog">Progression:</p>
-                <input type="radio" id="A" name="progression" value="A" required>
+                <input type="radio" id="A" name="progression" value="A" <%= progression === 'A' ? 'checked' : '' %>>
                 <label for="A">A</label>
                 <br>
-                <input type="radio" id="B" name="progression" value="B">
+                <input type="radio" id="B" name="progression" value="B" <%= progression === 'B' ? 'checked' : '' %>>
                 <label for="B">B</label>
                 <br>
-                <input type="radio" id="C" name="progression" value="C">
+                <input type="radio" id="C" name="progression" value="C" <%= progression === 'C' ? 'checked' : '' %>>
                 <label for="C">C</label>
                 <br>
                 <br>
                 <label for="courseSyllabus">Kursplanens URL:</label>
                 <br>
-                <input type="url" name="syllabus" id="courseSyllabus" placeholder="Skriv URL" required>
+                <input type="url" name="syllabus" id="courseSyllabus" placeholder="Skriv URL" value="<%= syllabus %>">
                 <br>
                 <br>
+
+                <% if(locals.errors.length> 0) { %>
+                    <ul>
+                        <% errors.forEach((error)=> { %>
+                            <li id="errors">
+                                <%= error %>
+                            </li>
+                            <% }); %>
+                    </ul>
+                    <% } %>
+                    
                 <div class="button-container">
                     <input type="submit" id="saveCourse" value="Spara">
                     <input type="reset" id="resetForm" value="Avbryt">

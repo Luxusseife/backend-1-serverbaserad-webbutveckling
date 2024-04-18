@@ -61,7 +61,12 @@ app.get("/", (req, res) => {
 app.get("/addcourse", (req, res) => { 
     res.render("addcourse", {
         fullname: "Jenny Lind",
-        title: "Lägg till kurs"
+        title: "Lägg till kurs",
+        errors: [],
+        coursename: "",
+        coursecode: "",
+        progression: "",
+        syllabus: ""
     });
 });
 
@@ -72,11 +77,46 @@ app.post("/", async (req, res) => {
     const progression = req.body.progression;
     const syllabus = req.body.syllabus;
 
+    let errors = [];
+
+    // Validerar input.
+    if(coursename === "") {
+        errors.push("Kursnamn måste anges!");
+    }
+
+    if(coursecode === "") {
+        errors.push("Kurskod måste anges!");
+    } 
+
+    if(progression === "" || !progression) {
+        errors.push("Progression måste anges!");
+    }
+
+    if(syllabus === "") {
+        errors.push("Länk till kursplan måste anges!");
+    }
+
+    // Kollar om det finns felmeddelanden.
+    if (errors.length > 0) {
+    // Skickar nytt anrop till kurssidan.
+    res.render("addcourse", {
+        fullname: "Jenny Lind",
+        title: "Lägg till kurs",
+        errors: errors,
+        coursename: coursename,
+        coursecode: coursecode,
+        progression: progression,
+        syllabus: syllabus
+
+    });
+    // Om inga felmeddelanden finns, gå vidare med lagring/utskrift.
+    } else {
     // SQL-fråga.
     const result = await client.query("INSERT INTO courses(coursename, coursecode, progression, syllabus) VALUES($1, $2, $3, $4)",
     [coursename, coursecode, progression, syllabus]
     );
     res.redirect("/");
+    }
 });
 
 // Raderar kurs.

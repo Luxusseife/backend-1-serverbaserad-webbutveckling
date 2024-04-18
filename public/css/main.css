@@ -172,6 +172,12 @@ h3 {
     color: #3c526a;
 }
 
+/* Felmeddelanden vid ej validerad input. */
+#errors {
+    margin: 1rem 0 1rem 1.5rem;
+    color: #a64b43;
+}
+
 /* Spara-knapp. */
 #saveCourse  {
     width: 5rem;
